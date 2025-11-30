@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Biblioteca multimedia con series y películas organizadas por temporadas y capítulos">
+    <title>Mi Biblioteca Multimedia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="background-gradient"></div>
+    
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="logo">
+                    <span class="logo-icon">🎬</span>
+                    <span class="logo-text">MediaHub</span>
+                </h1>
+                <nav class="nav">
+                    <button class="nav-btn active" data-filter="all">Todo</button>
+                    <button class="nav-btn" data-filter="series">Series</button>
+                    <button class="nav-btn" data-filter="movies">Películas</button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <div class="media-grid" id="mediaGrid">
+                
+                <!-- Serie 1: Breaking Bad -->
+                <div class="media-card" data-type="series">
+                    <div class="media-card-header">
+                        <div class="media-icon">📺</div>
+                        <div class="media-info">
+                            <h2 class="media-title">Breaking Bad</h2>
+                            <p class="media-meta">5 Temporadas • Drama</p>
+                        </div>
+                        <button class="toggle-btn" aria-label="Expandir">
+                            <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="media-content">
+                        <div class="season-list">
+                            <div class="season-item">
+                                <button class="season-header">
+                                    <span class="season-title">Temporada 1</span>
+                                    <span class="season-count">7 episodios</span>
+                                    <svg class="season-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
+                                </button>
+                                <div class="episode-list">
+                                    <a href="#ep1" class="episode-link">
+                                        <span class="episode-number">01</span>
+                                        <span class="episode-title">Pilot</span>
+                                    </a>
+                                    <a href="#ep2" class="episode-link">
+                                        <span class="episode-number">02</span>
+                                        <span class="episode-title">Cat's in the Bag...</span>
+                                    </a>
+                                    <a href="#ep3" class="episode-link">
+                                        <span class="episode-number">03</span>
+                                        <span class="episode-title">...And the Bag's in the River</span>
+                                    </a>
+                                    <a href="#ep4" class="episode-link">
+                                        <span class="episode-number">04</span>
+                                        <span class="episode-title">Cancer Man</span>
+                                    </a>
+                                    <a href="#ep5" class="episode-link">
+                                        <span class="episode-number">05</span>
+                                        <span class="episode-title">Gray Matter</span>
+                                    </a>
+                                    <a href="#ep6" class="episode-link">
+                                        <span class="episode-number">06</span>
+                                        <span class="episode-title">Crazy Handful of Nothin'</span>
+                                    </a>
+                                    <a href="#ep7" class="episode-link">
+                                        <span class="episode-number">07</span>
+                                        <span class="episode-title">A No-Rough-Stuff-Type Deal</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="season-item">
+                                <button class="season-header">
+                                    <span class="season-title">Temporada 2</span>
+                                    <span class="season-count">13 episodios</span>
+                                    <svg class="season-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
+                                </button>
+                                <div class="episode-list">
+                                    <a href="#s2ep1" class="episode-link">
+                                        <span class="episode-number">01</span>
+                                        <span class="episode-title">Seven Thirty-Seven</span>
+                                    </a>
+                                    <a href="#s2ep2" class="episode-link">
+                                        <span class="episode-number">02</span>
+                                        <span class="episode-title">Grilled</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Serie 2: Stranger Things -->
+                <div class="media-card" data-type="series">
+                    <div class="media-card-header">
+                        <div class="media-icon">👾</div>
+                        <div class="media-info">
+                            <h2 class="media-title">Stranger Things</h2>
+                            <p class="media-meta">4 Temporadas • Sci-Fi</p>
+                        </div>
+                        <button class="toggle-btn" aria-label="Expandir">
+                            <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="media-content">
+                        <div class="season-list">
+                            <div class="season-item">
+                                <button class="season-header">
+                                    <span class="season-title">Temporada 1</span>
+                                    <span class="season-count">8 episodios</span>
+                                    <svg class="season-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
+                                </button>
+                                <div class="episode-list">
+                                    <a href="#st1ep1" class="episode-link">
+                                        <span class="episode-number">01</span>
+                                        <span class="episode-title">Chapter One: The Vanishing of Will Byers</span>
+                                    </a>
+                                    <a href="#st1ep2" class="episode-link">
+                                        <span class="episode-number">02</span>
+                                        <span class="episode-title">Chapter Two: The Weirdo on Maple Street</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Película 1: Inception -->
+                <div class="media-card" data-type="movies">
+                    <div class="media-card-header">
+                        <div class="media-icon">🎥</div>
+                        <div class="media-info">
+                            <h2 class="media-title">Inception</h2>
+                            <p class="media-meta">2010 • Sci-Fi / Thriller</p>
+                        </div>
+                        <button class="toggle-btn" aria-label="Expandir">
+                            <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="media-content">
+                        <div class="movie-links">
+                            <a href="#inception-hd" class="movie-link">
+                                <span class="quality-badge">HD</span>
+                                <span>Ver en HD (720p)</span>
+                            </a>
+                            <a href="#inception-fullhd" class="movie-link">
+                                <span class="quality-badge">Full HD</span>
+                                <span>Ver en Full HD (1080p)</span>
+                            </a>
+                            <a href="#inception-4k" class="movie-link">
+                                <span class="quality-badge">4K</span>
+                                <span>Ver en 4K Ultra HD</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Película 2: The Matrix -->
+                <div class="media-card" data-type="movies">
+                    <div class="media-card-header">
+                        <div class="media-icon">🎥</div>
+                        <div class="media-info">
+                            <h2 class="media-title">The Matrix</h2>
+                            <p class="media-meta">1999 • Sci-Fi / Action</p>
+                        </div>
+                        <button class="toggle-btn" aria-label="Expandir">
+                            <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="media-content">
+                        <div class="movie-links">
+                            <a href="#matrix-hd" class="movie-link">
+                                <span class="quality-badge">HD</span>
+                                <span>Ver en HD (720p)</span>
+                            </a>
+                            <a href="#matrix-fullhd" class="movie-link">
+                                <span class="quality-badge">Full HD</span>
+                                <span>Ver en Full HD (1080p)</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">MediaHub © 2024 - Tu biblioteca multimedia personal</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
