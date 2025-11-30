@@ -6,22 +6,22 @@
     --color-bg-tertiary: hsl(230, 18%, 16%);
     --color-bg-card: hsl(230, 20%, 14%);
     --color-bg-card-hover: hsl(230, 20%, 18%);
-    
+
     --color-accent-primary: hsl(280, 85%, 60%);
     --color-accent-secondary: hsl(200, 90%, 55%);
     --color-accent-gradient: linear-gradient(135deg, hsl(280, 85%, 60%), hsl(200, 90%, 55%));
-    
+
     --color-text-primary: hsl(0, 0%, 98%);
     --color-text-secondary: hsl(0, 0%, 70%);
     --color-text-tertiary: hsl(0, 0%, 50%);
-    
+
     --color-border: hsl(230, 15%, 25%);
     --color-border-hover: hsl(230, 15%, 35%);
-    
+
     /* Glassmorphism */
     --glass-bg: hsla(230, 20%, 16%, 0.7);
     --glass-border: hsla(0, 0%, 100%, 0.1);
-    
+
     /* Spacing */
     --space-xs: 0.5rem;
     --space-sm: 0.75rem;
@@ -29,30 +29,30 @@
     --space-lg: 1.5rem;
     --space-xl: 2rem;
     --space-2xl: 3rem;
-    
+
     /* Typography */
     --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     --font-display: 'Outfit', sans-serif;
-    
+
     --font-size-xs: 0.75rem;
     --font-size-sm: 0.875rem;
     --font-size-base: 1rem;
     --font-size-lg: 1.125rem;
     --font-size-xl: 1.5rem;
     --font-size-2xl: 2rem;
-    
+
     /* Shadows */
     --shadow-sm: 0 2px 8px hsla(0, 0%, 0%, 0.1);
     --shadow-md: 0 4px 16px hsla(0, 0%, 0%, 0.2);
     --shadow-lg: 0 8px 32px hsla(0, 0%, 0%, 0.3);
     --shadow-glow: 0 0 20px hsla(280, 85%, 60%, 0.3);
-    
+
     /* Border Radius */
     --radius-sm: 0.5rem;
     --radius-md: 0.75rem;
     --radius-lg: 1rem;
     --radius-xl: 1.5rem;
-    
+
     /* Transitions */
     --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
     --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -89,7 +89,7 @@ body {
     width: 100%;
     height: 100%;
     z-index: -1;
-    background: 
+    background:
         radial-gradient(circle at 20% 20%, hsla(280, 85%, 60%, 0.15) 0%, transparent 50%),
         radial-gradient(circle at 80% 80%, hsla(200, 90%, 55%, 0.15) 0%, transparent 50%);
     pointer-events: none;
@@ -206,6 +206,7 @@ body {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -217,7 +218,7 @@ body {
     background: var(--color-bg-card);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-xl);
-    overflow: hidden;
+    overflow: visible;
     transition: all var(--transition-base);
     box-shadow: var(--shadow-md);
 }
@@ -296,21 +297,6 @@ body {
     transition: transform var(--transition-base);
 }
 
-.media-card.expanded .toggle-icon {
-    transform: rotate(180deg);
-}
-
-/* ===== Media Content ===== */
-.media-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height var(--transition-slow);
-}
-
-.media-card.expanded .media-content {
-    max-height: 2000px;
-}
-
 /* ===== Season List ===== */
 .season-list {
     padding: 0 var(--space-lg) var(--space-lg);
@@ -363,22 +349,6 @@ body {
     height: 20px;
     transition: transform var(--transition-base);
     flex-shrink: 0;
-}
-
-.season-item.expanded .season-icon {
-    transform: rotate(180deg);
-}
-
-/* ===== Episode List ===== */
-.episode-list {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height var(--transition-slow);
-    background: var(--color-bg-primary);
-}
-
-.season-item.expanded .episode-list {
-    max-height: 1000px;
 }
 
 .episode-link {
@@ -507,20 +477,20 @@ body {
         flex-direction: column;
         gap: var(--space-lg);
     }
-    
+
     .nav {
         width: 100%;
         justify-content: center;
     }
-    
+
     .nav-btn {
         flex: 1;
     }
-    
+
     .media-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .container {
         padding: 0 var(--space-md);
     }
@@ -530,21 +500,21 @@ body {
     .logo {
         font-size: var(--font-size-lg);
     }
-    
+
     .logo-icon {
         font-size: var(--font-size-xl);
     }
-    
+
     .media-card-header {
         padding: var(--space-md);
     }
-    
+
     .media-icon {
         width: 50px;
         height: 50px;
         font-size: 2rem;
     }
-    
+
     .media-title {
         font-size: var(--font-size-base);
     }

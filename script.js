@@ -81,8 +81,10 @@ function initializeFilters() {
 
 // ===== Episode Link Interaction =====
 function initializeEpisodeLinks() {
-    const episodeLinks = document.querySelectorAll('.episode-link, .movie-link');
+    const episodeLinks = document.querySelectorAll('.episode-link');
+    const movieLinks = document.querySelectorAll('.movie-link');
 
+    // Handle episode links
     episodeLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
@@ -93,18 +95,82 @@ function initializeEpisodeLinks() {
                 link.style.transform = '';
             }, 150);
 
-            // Get the href
-            const href = link.getAttribute('href');
+            // Get episode information from the DOM
+            const episodeNumber = link.querySelector('.episode-number')?.textContent || '1';
+            const episodeTitle = link.querySelector('.episode-title')?.textContent || 'Episode';
 
-            // You can replace this with actual navigation logic
-            console.log('Navigating to:', href);
+            // Get season information
+            const seasonItem = link.closest('.season-item');
+            const seasonTitle = seasonItem?.querySelector('.season-title')?.textContent || 'Temporada 1';
+            const seasonNumber = seasonTitle.match(/\d+/)?.[0] || '1';
 
-            // Example: Show alert (replace with your actual video player logic)
-            const title = link.querySelector('.episode-title')?.textContent ||
-                link.textContent.trim();
+            // Get series information
+            const mediaCard = link.closest('.media-card');
+            const seriesTitle = mediaCard?.querySelector('.media-title')?.textContent || 'Serie';
 
-            // Create a simple notification
-            showNotification(`Cargando: ${title}`);
+            // Get the video URL from href (you'll need to update your HTML to include actual URLs)
+            const videoUrl = link.getAttribute('href').replace('#', '');
+
+            // Navigate to player page with parameters
+            const playerUrl = new URL('player.html', window.location.href);
+            playerUrl.searchParams.set('series', seriesTitle);
+            playerUrl.searchParams.set('season', seasonNumber);
+            playerUrl.searchParams.set('episode', episodeNumber);
+            playerUrl.searchParams.set('title', episodeTitle);
+
+            // If you have a video URL, add it
+            if (videoUrl && videoUrl !== '') {
+                playerUrl.searchParams.set('url', videoUrl);
+            }
+
+            // Show notification
+            showNotification(`Cargando: ${episodeTitle}`);
+
+            // Navigate after a short delay
+            setTimeout(() => {
+                window.location.href = playerUrl.toString();
+            }, 300);
+        });
+    });
+
+    // Handle movie links
+    movieLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            // Add visual feedback
+            link.style.transform = 'scale(0.98)';
+            setTimeout(() => {
+                link.style.transform = '';
+            }, 150);
+
+            // Get movie information
+            const mediaCard = link.closest('.media-card');
+            const movieTitle = mediaCard?.querySelector('.media-title')?.textContent || 'Película';
+            const quality = link.querySelector('.quality-badge')?.textContent || 'HD';
+
+            // Get the video URL from href
+            const videoUrl = link.getAttribute('href').replace('#', '');
+
+            // Navigate to player page with parameters
+            const playerUrl = new URL('player.html', window.location.href);
+            playerUrl.searchParams.set('series', movieTitle);
+            playerUrl.searchParams.set('season', '1');
+            playerUrl.searchParams.set('episode', '1');
+            playerUrl.searchParams.set('title', `${movieTitle} (${quality})`);
+
+            // If you have a video URL, add it
+            if (videoUrl && videoUrl !== '') {
+                playerUrl.searchParams.set('url', videoUrl);
+            }
+
+            // Show notification
+            showNotification(`Cargando: ${movieTitle}`);
+
+            // Navigate after a short delay
+            setTimeout(() => {
+                window.location.href = playerUrl.toString();
+            }, 300);
         });
     });
 }
